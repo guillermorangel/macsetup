@@ -1,5 +1,6 @@
 # Tools
 brew install --cask boom
+brew install --cask fastscripts
 brew install --cask flux
 brew install --cask lunar
 brew install --cask rectangle
