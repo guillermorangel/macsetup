@@ -6,8 +6,8 @@ brew install --cask visual-studio-code
 code --install-extension sleistner.vscode-fileutils 
 code --install-extension eamodio.gitlens
 code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension vscodevim.vim
 code --install-extension esbenp.prettier-vscode
+code --install-extension shd101wyy.markdown-preview-enhanced
 
 # Ruby
 code --install-extension castwide.solargraph
