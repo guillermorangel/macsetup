@@ -30,5 +30,6 @@ brew install --cask megasync
 brew install --cask notion
 brew install --cask obsidian
 brew install --cask spotify
+brew install --cask tradingview
 
 # typeeto
