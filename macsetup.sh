@@ -223,9 +223,6 @@ brew "dark-mode"
 tap "knrz/iterm-workspace"
 brew "iterm-workspace"
 
-fancy_echo "Run ruby.sh ..."
-source ruby.sh
-
 fancy_echo "Run casks.sh ..."
 source casks.sh
 
