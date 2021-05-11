@@ -216,8 +216,6 @@ fi
 # 2. Install Xcode
 
 fancy_echo "Install additional applications via homebrew ..."
-brew "carthage"
-brew "swiftlint"
 brew "wget"
 brew "dark-mode"
 tap "knrz/iterm-workspace"
