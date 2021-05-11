@@ -23,6 +23,7 @@ brew install --cask keybase
 
 # Apps
 brew install --cask adobe-creative-cloud
+brew install --cask amazon-photos
 brew install --cask chrome
 brew install --cask dropbox
 brew install --cask firefox
