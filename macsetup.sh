@@ -236,4 +236,3 @@ mkdir -p ~/git/collectiveidea
 mkdir -p ~/git/ngc
 mkdir -p ~/git/bhn
 mkdir -p ~/git/guillermorangel
-mkdir -p ~/bin
