@@ -9,7 +9,6 @@ brew install --cask github
 brew install --cask gitkraken
 brew install --cask figma
 brew install --cask iterm2
-brew install --cask tableplus
 brew install --cask slack
 brew install --cask visual-studio-code
 
