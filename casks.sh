@@ -1,5 +1,4 @@
 # Tools
-brew install --cask boom
 brew install --cask fastscripts
 brew install --cask flux
 brew install --cask lunar
@@ -17,7 +16,6 @@ brew install --cask visual-studio-code
 # Utils
 brew install --cask appcleaner
 brew install --cask bitwarden
-brew install --cask daisydisk
 brew install --cask grandperspective
 brew install --cask keybase
 
