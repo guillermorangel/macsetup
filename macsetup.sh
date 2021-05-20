@@ -238,6 +238,32 @@ mkdir -p ~/git/collectiveidea
 mkdir -p ~/git/guillermorangel
 mkdir -p ~/git/ngc
 
+fancy_echo "Setup the following ..."
+fancy_echo "
+Finder > View
+- Show Path Bar
+- Show Status Bar
+
+Preferences > Finder
+- Remove all show items on the desktop
+- Set new finder window shows home directory
+- Sidebar options: Add favorites & Remove tags
+
+Preferences > Display
+- Set scaling
+- Set monitor arrangement
+- Remove true tone
+
+Preferences > Sharing
+- Update machine name
+
+Dock
+- Remove unwanted apps
+- Turn on hiding
+- Preference > Dock: Remove recent applications
+
+When ready, Enter to setup applications via open.sh ..."
+
 fancy_echo "Run open.sh ..."
 source open.sh
 
