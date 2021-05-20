@@ -257,6 +257,10 @@ Preferences > Display
 Preferences > Sharing
 - Update machine name
 
+Preferences > Security & Privacy
+- Set password requirement to 1 hour
+- Allow apple watch to unlock mac
+
 Dock
 - Remove unwanted apps
 - Turn on hiding
