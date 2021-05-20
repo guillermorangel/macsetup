@@ -232,7 +232,10 @@ brew services start redis
 brew services start postgresql
 
 fancy_echo "Setup unique directories ..."
-mkdir -p ~/git/collectiveidea
-mkdir -p ~/git/ngc
+mkdir -p ~/git
 mkdir -p ~/git/bhn
+mkdir -p ~/git/collectiveidea
 mkdir -p ~/git/guillermorangel
+mkdir -p ~/git/ngc
+
+fancy_echo "All set"
