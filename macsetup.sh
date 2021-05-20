@@ -238,4 +238,7 @@ mkdir -p ~/git/collectiveidea
 mkdir -p ~/git/guillermorangel
 mkdir -p ~/git/ngc
 
+fancy_echo "Run open.sh ..."
+source open.sh
+
 fancy_echo "All set"
