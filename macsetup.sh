@@ -158,7 +158,7 @@ brew link --force heroku
 
 fancy_echo "Configuring asdf version manager ..."
 if [ ! -d "$HOME/.asdf" ]; then
-  brew "asdf"
+  brew install asdf
   append_to_zshrc "source $(brew --prefix asdf)/asdf.sh" 1
 fi
 
@@ -216,10 +216,10 @@ fi
 # 2. Install Xcode
 
 fancy_echo "Install additional applications via homebrew ..."
-brew "wget"
-brew "dark-mode"
-tap "knrz/iterm-workspace"
-brew "iterm-workspace"
+brew install wget
+brew install dark-mode
+brew tap knrz/iterm-workspace
+brew install iterm-workspace
 
 fancy_echo "Run casks.sh ..."
 source casks.sh
