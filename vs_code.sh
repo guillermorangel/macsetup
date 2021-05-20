@@ -26,3 +26,24 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension icao.electron-vue
 code --install-extension github.github-vscode-theme
 code --install-extension mrmlnc.vscode-scss
+
+# Setup VSCode
+
+echo "Open VSCode ..."
+open /Applications/Visual\ Studio\ Code.app
+
+echo "Set theme: Command+K Command+T > GitHub Dark Dimmed"
+echo "Set settings:"
+
+cat <<EOF
+"editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+"editor.fontSize": 15,
+"editor.fontWeight": "600",
+"files.insertFinalNewline": true,
+"terminal.integrated.fontSize": 15,
+"terminal.integrated.fontWeight": 600,
+"terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace"
+EOF
+
+echo "Enter, to continue"
+read
