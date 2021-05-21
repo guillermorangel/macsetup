@@ -244,15 +244,19 @@ Finder > View
 - Show Path Bar
 - Show Status Bar
 
+Preferences > Bluetooth
+- Show Bluetooth in menu bar
+
+Preferences > Displays
+- Set scaling
+- Set monitor arrangement
+- Remove true tone
+- Disable automatically adjust brightness
+
 Preferences > Finder
 - Remove all show items on the desktop
 - Set new finder window shows home directory
 - Sidebar options: Add favorites & Remove tags
-
-Preferences > Display
-- Set scaling
-- Set monitor arrangement
-- Remove true tone
 
 Preferences > Sharing
 - Update machine name
