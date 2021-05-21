@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Tools
 brew install --cask fastscripts
 brew install --cask flux
