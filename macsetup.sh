@@ -254,7 +254,7 @@ Preferences > Displays
 - Disable automatically adjust brightness
 
 Preferences > Finder
-- Remove all show items on the desktop
+- Remove all items, except external hard disks, from showing on the desktop
 - Set new finder window shows home directory
 - Sidebar options: Add favorites & Remove tags
 
@@ -264,6 +264,13 @@ Preferences > Sharing
 Preferences > Security & Privacy
 - Set password requirement to 1 hour
 - Allow apple watch to unlock mac
+
+Desktop View Options
+- Icon Size: 48
+- Grid Spacing: 3rd highest
+- Text size: 10
+- Label position: Right
+- Show item info
 
 Dock
 - Remove unwanted apps
