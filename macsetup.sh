@@ -320,4 +320,5 @@ When ready, Enter to setup applications via open.sh ..."
 fancy_echo "Run open.sh ..."
 source open.sh
 
-fancy_echo "All set. Clean up by deleting the macsetup directory $ rm -rf <path/to/>macsetup"
+fancy_echo "All set. Cleaning up by deleting the macsetup directory: $ rm -rf <path/to/>macsetup"
+echo $PWD
