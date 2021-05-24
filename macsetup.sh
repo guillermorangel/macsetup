@@ -221,6 +221,9 @@ brew install dark-mode
 brew tap knrz/iterm-workspace
 brew install iterm-workspace
 
+fancy_echo "Run download.sh ..."
+source download.sh
+
 fancy_echo "Run casks.sh ..."
 source casks.sh
 
@@ -316,8 +319,5 @@ When ready, Enter to setup applications via open.sh ..."
 
 fancy_echo "Run open.sh ..."
 source open.sh
-
-fancy_echo "Run download.sh ..."
-source download.sh
 
 fancy_echo "All set. Clean up by deleting the macsetup directory $ rm -rf <path/to/>macsetup"
