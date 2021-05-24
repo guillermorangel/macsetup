@@ -42,7 +42,8 @@ cat <<EOF
 "files.insertFinalNewline": true,
 "terminal.integrated.fontSize": 15,
 "terminal.integrated.fontWeight": 600,
-"terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace"
+"terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+"workbench.colorTheme": "GitHub Dark Dimmed"
 EOF
 
 echo "Enter, to continue"
