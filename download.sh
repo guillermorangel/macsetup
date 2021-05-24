@@ -20,4 +20,10 @@ read
 hdiutil detach /Volumes/EU3.13.20
 rm -rf ~/Downloads/EU-Installset*
 rm -rf ~/Downloads/__MACOSX
-echo "Cleaned.
+echo "Cleaned."
+
+echo "Downloading Roboto Mono font ..."
+git clone git@github.com:googlefonts/RobotoMono.git
+open ./RobotoMono/fonts/ttf
+echo "Install fonts, then Enter to continue ..."
+read

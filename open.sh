@@ -2,14 +2,9 @@
 
 echo ""
 open /Applications/Google\ Chrome.app
-echo "Download and install Roboto Mono Font: https://fonts.google.com/specimen/Roboto+Mono"
-echo "Enter, to continue"
-read
 
 echo "Dropbox"
 open /Applications/Dropbox.app
-echo "Enter, to continue"
-read
 
 echo "Obsidian"
 echo "Set valut to: ~/Dropbox/Documents/Obsidian/Vault"
