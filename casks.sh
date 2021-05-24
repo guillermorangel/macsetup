@@ -11,6 +11,7 @@ brew install --cask github
 brew install --cask gitkraken
 brew install --cask figma
 brew install --cask iterm2
+brew install --cask miro
 brew install --cask slack
 brew install --cask visual-studio-code
 
@@ -22,6 +23,7 @@ brew install --cask keybase
 
 # Apps
 brew install --cask adobe-creative-cloud
+brew install --cask airtable
 brew install --cask amazon-photos
 brew install --cask google-chrome
 brew install --cask dropbox
