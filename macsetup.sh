@@ -215,7 +215,7 @@ fi
 # 1. Copy your ssh keys
 # 2. Install Xcode
 
-fancy_echo "Install additional applications via homebrew ..."
+fancy_echo "Install additional packages via homebrew ..."
 brew install wget
 brew install dark-mode
 brew tap knrz/iterm-workspace
@@ -240,42 +240,77 @@ mkdir -p ~/git/ngc
 
 fancy_echo "Setup the following ..."
 fancy_echo "
-Finder > View
-- Show Path Bar
-- Show Status Bar
-
 Preferences > Bluetooth
-- Show Bluetooth in menu bar
+- Enable Show Bluetooth in menu bar
 
 Preferences > Displays
-- Set scaling
-- Set monitor arrangement
-- Remove true tone
-- Disable automatically adjust brightness
+- Set Resolution > Scaled > More Space
+- Disable True Tone
+- Disable Automatically adjust brightness
+- Set Arrangement
 
-Preferences > Finder
-- Remove all items, except external hard disks, from showing on the desktop
-- Set new finder window shows home directory
-- Sidebar options: Add favorites & Remove tags
+Preference > Dock & Menu Bar
+- Decrease Dock size
+- Enable Automatically hide and show the Dock
+- Disable Show recent applications applications
+- Battery > Enable Show Percentage
+- Clock > Enable Use a 24-hour clock
+- Spotlight > Disable Show in Menu Bar
+
+Preferences > General
+- Disable Allow wallpaper tinting in Windows
+
+- Touchbar Shows: Expanded Control Strip
+- Customize Control Strip to Remove Siri
+- Input Sources > Disable Show Input menu in menu bar
 
 Preferences > Sharing
-- Update machine name
+- Update Computer Name
 
 Preferences > Security & Privacy
-- Set password requirement to 1 hour
-- Allow apple watch to unlock mac
+- Set Require password: 1 hour
+- Enable Use your Apple Watch to unlock apps and your Mac
 
-Desktop View Options
+Preferences > Sound
+- Disable Play sound on startup
+- Enable Show volume in menu bar
+
+Preferences > Trackpad
+- Enable Tap to click
+- Enable Silent clicking
+- Tracking speed: 4th highest
+- Enable App Exposé
+
+Desktop > Show View Options
 - Icon Size: 48
 - Grid Spacing: 3rd highest
 - Text size: 10
 - Label position: Right
 - Show item info
 
-Dock
-- Remove unwanted apps
-- Turn on hiding
-- Preference > Dock: Remove recent applications
+Finder Preferences
+- General > Show these items on the desktop: External disks
+- General > New finder window shows: <user_home_directory>
+- Sidebar > Enable Favorites, Disable Recent Tags
+- Advanced > Show all filename extensions
+
+Finder > Show View Options
+- Enable Show Library Folder
+
+Finder > View
+- Show Path Bar
+- Show Status Bar
+
+Safari Preferences
+- Safari opens with: A new private window
+- Disable: Open safe files after downloading
+- Advanced > Show Develop menu in menu bar
+
+Remove apps from Dock:
+$ defaults delete com.apple.dock persistent-apps; killall Dock
+
+Make TextEdit open with a new document instead of a file window:
+$ defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 When ready, Enter to setup applications via open.sh ..."
 
