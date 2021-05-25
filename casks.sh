@@ -20,6 +20,7 @@ brew install --cask appcleaner
 brew install --cask bitwarden
 brew install --cask grandperspective
 brew install --cask keybase
+brew install --cask the-unarchiver
 
 # Apps
 brew install --cask adobe-creative-cloud
