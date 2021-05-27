@@ -34,5 +34,6 @@ brew install --cask notion
 brew install --cask obsidian
 brew install --cask spotify
 brew install --cask tradingview
+brew install --cask zoom
 
 # typeeto
