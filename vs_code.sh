@@ -18,6 +18,7 @@ code --install-extension castwide.solargraph
 code --install-extension elliotlarson.ruby-around-the-block
 code --install-extension misogi.ruby-rubocop
 code --install-extension noku.rails-run-spec-vscode
+code --install-extension rayhanw.erb-helpers
 code --install-extension rebornix.ruby
 
 # Formatting & Linting
@@ -46,6 +47,7 @@ cat <<EOF
 "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
 "editor.fontSize": 15,
 "editor.fontWeight": "600",
+"editor.tabSize": 2,
 "files.insertFinalNewline": true,
 "terminal.integrated.fontSize": 15,
 "terminal.integrated.fontWeight": 600,
