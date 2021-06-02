@@ -3,7 +3,7 @@
 echo "Downloading Canon EOS WebCam Utility ..."
 wget -O ~/Downloads/EOSWebcamUtility.pkg.zip "https://downloads.canon.com/webcam/EOSWebcamUtility-MAC1.0.pkg.zip"
 unzip ~/Downloads/EOSWebcamUtility.pkg.zip -d ~/Downloads/
-installer -pkg ~/Downloads/EOSWebcamUtility.pkg -target /Applications
+installer -pkg ~/Downloads/EOSWebcamUtility-MAC1.0.pkg -target /Applications
 echo "Enter, to cleanup ..."
 read
 rm -rf ~/Downloads/EOSWebcamUtility*
