@@ -3,6 +3,7 @@
 # Utils
 brew install --cask fastscripts
 brew install --cask flux
+brew install --cask karabiner-elements
 brew install --cask lunar
 brew install --cask rectangle
 
