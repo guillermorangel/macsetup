@@ -8,8 +8,9 @@ brew install --cask visual-studio-code
 code --install-extension christian-kohler.path-intellisense
 code --install-extension eamodio.gitlens
 code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension pnp.polacode
 code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension sleistner.vscode-fileutils 
+code --install-extension sleistner.vscode-fileutils
 
 # Ruby
 code --install-extension bung87.rails
