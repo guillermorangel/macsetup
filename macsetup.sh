@@ -285,6 +285,8 @@ Preferences > Trackpad
 - Enable App Exposé
 
 Desktop > Show View Options
+- Stack By: Kind
+- Sort By: Kind
 - Icon Size: 48
 - Grid Spacing: 3rd highest
 - Text size: 10
