@@ -27,14 +27,15 @@ code --install-extension abusaidm.html-snippets
 code --install-extension anweber.vscode-tidyhtml
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
+code --install-extension formulahendry.auto-rename-tag
+code --install-extension mgmcdermott.vscode-language-babel
 code --install-extension mrmlnc.vscode-scss
 code --install-extension stylelint.vscode-stylelint
+code --install-extension VisualStudioExptTeam.vscodeintellicode
 
 # Themes
 code --install-extension icao.electron-vue
 code --install-extension github.github-vscode-theme
-
-
 
 # Setup VSCode
 
