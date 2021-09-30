@@ -22,6 +22,10 @@ code --install-extension noku.rails-run-spec-vscode
 code --install-extension rayhanw.erb-helpers
 code --install-extension rebornix.ruby
 
+# Vue
+code --install-extension octref.vetur
+code --install-extension jcbuisson.vue
+
 # Formatting & Linting
 code --install-extension abusaidm.html-snippets
 code --install-extension anweber.vscode-tidyhtml
