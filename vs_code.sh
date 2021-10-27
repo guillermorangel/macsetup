@@ -50,15 +50,93 @@ echo "Set theme: Command+K Command+T > GitHub Dark Dimmed"
 echo "Set settings:"
 
 cat <<EOF
-"editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
-"editor.fontSize": 15,
-"editor.fontWeight": "600",
-"editor.tabSize": 2,
-"files.insertFinalNewline": true,
-"terminal.integrated.fontSize": 15,
-"terminal.integrated.fontWeight": 600,
-"terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
-"workbench.colorTheme": "GitHub Dark Dimmed"
+{
+  "auto-rename-tag.activationOnLanguage": ["*"],
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "600",
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "gitlens.codeLens.enabled": false,
+  "files.insertFinalNewline": true,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontWeight": 600,
+  "terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.tree.indent": 20,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  // epic react
+  "breadcrumbs.enabled": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.defaultFormatter": "anweber.vscode-tidyhtml",
+  "editor.detectIndentation": true,
+  "editor.fontLigatures": false,
+  "editor.formatOnPaste": false,
+  "editor.renderWhitespace": "trailing",
+  "editor.rulers": [100],
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": true,
+  "editor.smoothScrolling": true,
+  "editor.wordBasedSuggestions": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "files.exclude": {
+    "USE_GITIGNORE": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "anweber.vscode-tidyhtml",
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.suggest.showKeywords": false
+  },
+  "javascript.validate.enable": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true
+  },
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "eslint.options": {
+    "env": {
+      "browser": true,
+      "jest/globals": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "no-debugger": "off"
+    }
+  },
+  "grunt.autoDetect": "off",
+  "gulp.autoDetect": "off",
+  "npm.runSilent": true,
+  "php.suggest.basic": false,
+  "editor.minimap.enabled": false,
+}
 EOF
 
 echo "Enter, to continue"
