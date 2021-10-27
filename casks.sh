@@ -13,6 +13,7 @@ brew install --cask gitkraken
 brew install --cask figma
 brew install --cask iterm2
 brew install --cask miro
+brew install --cask postman
 brew install --cask slack
 brew install --cask visual-studio-code
 
