@@ -145,7 +145,6 @@ brew "imagemagick"
 brew "libyaml" # should come after openssl
 brew "coreutils"
 brew "yarn"
-cask "gpg-suite"
 
 # Databases
 brew "postgresql", restart_service: :changed
