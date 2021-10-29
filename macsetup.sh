@@ -103,6 +103,9 @@ if ! command -v brew >/dev/null; then
     append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
 
     export PATH="/usr/local/bin:$PATH"
+
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/guillermo/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if brew list | grep -Fq brew-cask; then
