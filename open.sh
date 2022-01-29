@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+echo "Karabiner Elements"
+open /Applications/Karabiner-Elements.app
 
-echo ""
+echo "Chrome"
 open /Applications/Google\ Chrome.app
 
-echo "Dropbox"
-open /Applications/Dropbox.app
+echo "Firefox"
+open /Applications/Firefox.app
 
 echo "Obsidian"
 echo "Set valut to: ~/Dropbox/Documents/Obsidian/Vault"
@@ -25,6 +27,9 @@ open /Applications/Rectangle.app
 echo "GitKraken"
 open /Applications/GitKraken.app
 
+echo "Postman"
+open /Applications/Postman.app
+
 echo "Figma"
 open /Applications/Figma.app
 
@@ -37,11 +42,8 @@ open /Applications/Slack.app
 echo "Bitwarden"
 open /Applications/Bitwarden.app
 
-echo "Keybase"
-open /Applications/Keybase.app
-
-echo "Megasync"
-open /Applications/Megasync.app
+echo "Airtable"
+open /Applications/Airtable.app
 
 echo "Notion"
 open /Applications/Notion.app
