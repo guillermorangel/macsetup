@@ -233,7 +233,7 @@ fancy_echo "Run vs_code.sh ..."
 source vs_code.sh
 
 fancy_echo "Starting homebrew services ..."
-brew services start redis
+# brew services start redis
 brew services start postgresql
 
 fancy_echo "Setup unique directories ..."
