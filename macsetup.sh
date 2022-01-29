@@ -223,6 +223,8 @@ brew install dark-mode
 brew tap knrz/iterm-workspace
 brew install iterm-workspace
 
+# disable confirmation window about application being from the web
+sudo spctl --master-disable
 fancy_echo "Run download.sh ..."
 source download.sh
 
@@ -319,6 +321,9 @@ When ready, Enter to setup applications via open.sh ..."
 
 fancy_echo "Run open.sh ..."
 source open.sh
+
+# enable confirmation window about application being from the web
+sudo spctl --master-enable
 
 fancy_echo "All set. Cleaning up by deleting the macsetup directory: $ rm -rf <path/to/>macsetup"
 echo $PWD
