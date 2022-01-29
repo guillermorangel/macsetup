@@ -219,15 +219,18 @@ fi
 
 fancy_echo "Install additional packages via homebrew ..."
 brew install wget
-brew install dark-mode
 brew tap knrz/iterm-workspace
 brew install iterm-workspace
 
 # disable confirmation window about application being from the web
 sudo spctl --master-disable
+
+# TODO: split into font download and canon download
+# TODO: move the canon section to bottom and make it an option to skip running canon downloads
 fancy_echo "Run download.sh ..."
 source download.sh
 
+# TODO: split vscode download and setup into it's own script
 fancy_echo "Run casks.sh ..."
 source casks.sh
 
@@ -238,6 +241,7 @@ fancy_echo "Starting homebrew services ..."
 # brew services start redis
 brew services start postgresql
 
+# TODO: Move these sections to the the top of the script
 fancy_echo "Setup unique directories ..."
 mkdir -p ~/git
 mkdir -p ~/git/bhn
