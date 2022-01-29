@@ -245,6 +245,12 @@ mkdir -p ~/git/ngc
 
 fancy_echo "Setup the following ..."
 fancy_echo "
+Remove apps from Dock:
+$ defaults delete com.apple.dock persistent-apps; killall Dock
+
+Make TextEdit open with a new document instead of a file window:
+$ defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
+
 Preferences > Bluetooth
 - Enable Show Bluetooth in menu bar
 
@@ -265,10 +271,6 @@ Preference > Dock & Menu Bar
 Preferences > General
 - Disable Allow wallpaper tinting in Windows
 
-- Touchbar Shows: Expanded Control Strip
-- Customize Control Strip to Remove Siri
-- Input Sources > Disable Show Input menu in menu bar
-
 Preferences > Sharing
 - Update Computer Name
 
@@ -278,7 +280,7 @@ Preferences > Security & Privacy
 
 Preferences > Sound
 - Disable Play sound on startup
-- Enable Show volume in menu bar
+- Enable Show volume in menu bar: always
 
 Preferences > Trackpad
 - Enable Tap to click
@@ -298,11 +300,11 @@ Desktop > Show View Options
 Finder Preferences
 - General > Show these items on the desktop: External disks
 - General > New finder window shows: <user_home_directory>
-- Sidebar > Enable Favorites, Disable Recent Tags
+- Sidebar > Disable Recent Tags
 - Advanced > Show all filename extensions
 
 Finder > Show View Options
-- Enable Show Library Folder
+- Enable Always open in column view & Browse in column view
 
 Finder > View
 - Show Path Bar
@@ -311,13 +313,7 @@ Finder > View
 Safari Preferences
 - Safari opens with: A new private window
 - Disable: Open safe files after downloading
-- Advanced > Show Develop menu in menu bar
-
-Remove apps from Dock:
-$ defaults delete com.apple.dock persistent-apps; killall Dock
-
-Make TextEdit open with a new document instead of a file window:
-$ defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
+- Advanced > Enable: Show Develop menu in menu bar
 
 When ready, Enter to setup applications via open.sh ..."
 
