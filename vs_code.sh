@@ -72,25 +72,26 @@ cat <<EOF
   "auto-rename-tag.activationOnLanguage": ["*"],
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontWeight": "600",
   "editor.formatOnSave": false,
+  "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "gitlens.codeLens.enabled": false,
+  "go.goroot": "/Users/guillermo/.asdf/installs/golang/1.16/go",
   "files.insertFinalNewline": true,
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": 600,
   "terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.tree.indent": 20,
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // epic react
   "breadcrumbs.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.defaultFormatter": "anweber.vscode-tidyhtml",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": true,
   "editor.fontLigatures": false,
   "editor.formatOnPaste": false,
@@ -109,7 +110,7 @@ cat <<EOF
     "USE_GITIGNORE": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "anweber.vscode-tidyhtml",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.suggestSelection": "recentlyUsed",
     "editor.suggest.showKeywords": false
   },
@@ -125,6 +126,7 @@ cat <<EOF
   },
   "eslint.packageManager": "yarn",
   "eslint.validate": [
+    "scss",
     "html",
     "javascript",
     "javascriptreact",
@@ -154,6 +156,13 @@ cat <<EOF
   "npm.runSilent": true,
   "php.suggest.basic": false,
   "editor.minimap.enabled": false,
+  "git.confirmSync": false,
+  "tatu-diff.getting_started": false,
+
+  // turbo console log
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "turboConsoleLog.includeFileNameAndLineNum": false,
 }
 EOF
 
