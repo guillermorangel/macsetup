@@ -5,12 +5,26 @@
 brew install --cask visual-studio-code
 
 # General
+code --install-extension chakrounanas.turbo-console-log
 code --install-extension christian-kohler.path-intellisense
 code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.live-server
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension pnp.polacode
+code --install-extension robertz.code-snapshot
 code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension sleistner.vscode-fileutils
+code --install-extension trybick.terminal-zoom
+
+# GoLang
+code --install-extension golang.go
+
+# Python
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+
+# xml
+code --install-extension dotjoshjohnson.xml
 
 # Ruby
 code --install-extension bung87.rails
@@ -28,12 +42,16 @@ code --install-extension jcbuisson.vue
 
 # Formatting & Linting
 code --install-extension abusaidm.html-snippets
-code --install-extension anweber.vscode-tidyhtml
+code --install-extension babobski.tatu-diff
+code --install-extension christianalexander.flip
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
+code --install-extension lmcarreiro.vscode-smart-column-indenter
 code --install-extension mgmcdermott.vscode-language-babel
+code --install-extension mikestead.dotenv
 code --install-extension mrmlnc.vscode-scss
+code --install-extension phoihos.csv-to-md-table
 code --install-extension stylelint.vscode-stylelint
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 
