@@ -4,10 +4,7 @@
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask spotify
-
-# Communication
-brew install --cask slack
-brew install --cask zoom
+brew install --cask webull
 
 # Design
 brew install --cask adobe-creative-cloud
@@ -27,14 +24,17 @@ brew install --cask visual-studio-code
 brew install --cask 1password
 brew install --cask airtable
 brew install --cask bitwarden
+brew install --cask harvest
 brew install --cask notion
+brew install --cask slack
 brew install --cask tradingview
-brew install --cask webull
+brew install --cask zoom
 
 # Tools
 brew install --cask appcleaner
 brew install --cask grandperspective
 brew install --cask the-unarchiver
+brew install --cask tripmode
 
 # Utils
 brew install --cask betterdummy
