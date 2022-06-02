@@ -4,17 +4,24 @@
 
 brew install --cask visual-studio-code
 
-# General
-code --install-extension chakrounanas.turbo-console-log
-code --install-extension christian-kohler.path-intellisense
-code --install-extension eamodio.gitlens
-code --install-extension ms-vscode.live-server
-code --install-extension ms-vsliveshare.vsliveshare
+# Display
+code --install-extension aaron-bond.better-comments
 code --install-extension pnp.polacode
 code --install-extension robertz.code-snapshot
 code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension sleistner.vscode-fileutils
 code --install-extension trybick.terminal-zoom
+
+
+# Tools
+code --install-extension chakrounanas.turbo-console-log
+code --install-extension christian-kohler.path-intellisense
+code --install-extension github.remotehub
+code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.live-server
+# code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension sleistner.vscode-fileutils
+code --install-extension wallabyjs.quokka-vscode
 
 # GoLang
 code --install-extension golang.go
