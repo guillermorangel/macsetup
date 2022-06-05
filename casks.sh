@@ -38,7 +38,7 @@ brew install --cask tripmode
 
 # Utils
 brew install --cask betterdummy
-# brew install --cask flux
+brew install --cask flux
 brew install --cask karabiner-elements
 brew install --cask lunar
 brew install --cask rectangle
