@@ -11,7 +11,6 @@ code --install-extension robertz.code-snapshot
 code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension trybick.terminal-zoom
 
-
 # Tools
 code --install-extension chakrounanas.turbo-console-log
 code --install-extension christian-kohler.path-intellisense
@@ -21,6 +20,7 @@ code --install-extension ms-vscode.live-server
 # code --install-extension ms-vscode-remote.remote-ssh
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension sleistner.vscode-fileutils
+code --install-extension visualstudioexptteam.intellicode-api-usage-examples
 code --install-extension wallabyjs.quokka-vscode
 
 # GoLang
@@ -76,33 +76,49 @@ echo "Set settings:"
 
 cat <<EOF
 {
-  "auto-rename-tag.activationOnLanguage": ["*"],
+  "auto-rename-tag.activationOnLanguage": [
+    "*"
+  ],
+
   "editor.cursorSmoothCaretAnimation": true,
+  "editor.detectIndentation": false,
   "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.fontWeight": "600",
   "editor.formatOnSave": false,
+  "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
+
   "gitlens.codeLens.enabled": false,
-  "go.goroot": "/Users/guillermo/.asdf/installs/golang/1.16/go",
   "files.insertFinalNewline": true,
-  "terminal.integrated.fontSize": 14,
+  "json.maxItemsComputed": 25000,
+  "redhat.telemetry.enabled": true,
+
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.fontWeight": 600,
   "terminal.integrated.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark Default",
   "workbench.tree.indent": 20,
+  // "workbench.experimental.layoutControl.enabled": true,
+  // "workbench.layoutControl.type": "toggles",
   "security.workspace.trust.untrustedFiles": "open",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  
+
+  "[go]": {
+    "editor.tabSize": 4
+  },
+  "go.goroot": "/Users/guillermo/.asdf/installs/golang/1.16/go",
+  "go.toolsManagement.autoUpdate": true,
 
   // epic react
   "breadcrumbs.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.detectIndentation": true,
   "editor.fontLigatures": false,
   "editor.formatOnPaste": false,
-  "editor.renderWhitespace": "trailing",
+  "editor.renderWhitespace": "none",
   "editor.rulers": [100],
   "editor.snippetSuggestions": "top",
   "editor.suggest.localityBonus": true,
@@ -131,38 +147,40 @@ cat <<EOF
     "**/.build": true,
     "**/.gh-pages": true
   },
-  "eslint.packageManager": "yarn",
-  "eslint.validate": [
-    "scss",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue"
-  ],
-  "eslint.options": {
-    "env": {
-      "browser": true,
-      "jest/globals": true,
-      "es6": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2019,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "rules": {
-      "no-debugger": "off"
-    }
-  },
+  // "eslint.packageManager": "yarn",
+  // "eslint.validate": [
+  //   "scss",
+  //   "html",
+  //   "javascript",
+  //   "javascriptreact",
+  //   "typescript",
+  //   "typescriptreact",
+  //   "vue"
+  // ],
+  // "eslint.options": {
+  //   "env": {
+  //     "browser": true,
+  //     "jest/globals": true,
+  //     "es6": true
+  //   },
+  //   // "overrideConfig": {
+  //     "parserOptions": {
+  //       "ecmaVersion": 2019,
+  //       "sourceType": "module",
+  //       "ecmaFeatures": {
+  //         "jsx": true
+  //       }
+  //     },
+  //     "rules": {
+  //       "no-debugger": "off"
+  //     }
+  //   // },
+
+  // },
   "grunt.autoDetect": "off",
   "gulp.autoDetect": "off",
   "npm.runSilent": true,
   "php.suggest.basic": false,
-  "editor.minimap.enabled": false,
   "git.confirmSync": false,
   "tatu-diff.getting_started": false,
 
@@ -170,7 +188,20 @@ cat <<EOF
   "turboConsoleLog.insertEnclosingClass": false,
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.includeFileNameAndLineNum": false,
+  "cSpell.enabled": false,
+  "search.useIgnoreFiles": true,
+  "search.useGlobalIgnoreFiles": true,
+
+  // emmet
+  "emmet.includeLanguages": {
+    "erb-html": "html",
+    "ruby-html": "html"
+  },
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
 }
+
 EOF
 
 echo "Enter, to continue"
