@@ -49,16 +49,12 @@ fi
 # shellcheck disable=SC2016
 append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
 
-HOMEBREW_PREFIX="/usr/local"
-
-if [ -d "$HOMEBREW_PREFIX" ]; then
-  if ! [ -r "$HOMEBREW_PREFIX" ]; then
-    sudo chown -R "$LOGNAME:admin" /usr/local
-  fi
+# Determine Homebrew prefix
+arch="$(uname -m)"
+if [ "$arch" = "arm64" ]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
 else
-  sudo mkdir "$HOMEBREW_PREFIX"
-  sudo chflags norestricted "$HOMEBREW_PREFIX"
-  sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
+  HOMEBREW_PREFIX="/usr/local"
 fi
 
 update_shell() {
@@ -95,17 +91,14 @@ gem_install_or_update() {
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
     /bin/bash -c \
-      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    append_to_zshrc '# recommended by brew doctor'
+    append_to_zshrc "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\""
 
-    # shellcheck disable=SC2016
-    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+    export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 
-    export PATH="/usr/local/bin:$PATH"
-
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/guillermo/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo "eval \"\$($HOMEBREW_PREFIX/bin/brew shellenv)\"" >> $HOME/.zprofile
+    eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 fi
 
 if brew list | grep -Fq brew-cask; then
@@ -114,16 +107,14 @@ if brew list | grep -Fq brew-cask; then
 fi
 
 fancy_echo "Updating Homebrew formulae ..."
-# https://github.com/Homebrew/brew/issues/1151
-brew update --force 
+brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
-tap "universal-ctags/universal-ctags"
 tap "heroku/brew"
 
 # Unix
-brew "universal-ctags", args: ["HEAD"]
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
 brew "rcm"
@@ -150,7 +141,7 @@ brew "coreutils"
 brew "yarn"
 
 # Databases
-brew "postgresql", restart_service: :changed
+brew "postgresql@14", restart_service: :changed
 brew "redis", restart_service: :changed
 EOF
 
@@ -199,7 +190,6 @@ number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 
 fancy_echo "Installing latest Node ..."
-bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs"
 
 if [ -f "$HOME/.laptop.local" ]; then
@@ -219,16 +209,17 @@ fi
 
 fancy_echo "Install additional packages via homebrew ..."
 brew install wget
-brew tap knrz/iterm-workspace
-brew install iterm-workspace
+# brew tap knrz/iterm-workspace/iterm-workspace
+# brew install iterm-workspace
 
 # disable confirmation window about application being from the web
 sudo spctl --master-disable
 
 # TODO: split into font download and canon download
 # TODO: move the canon section to bottom and make it an option to skip running canon downloads
-fancy_echo "Run download.sh ..."
-source download.sh
+# TODO: check for the existence of the fonts directory and delete before trying to download to avoid error
+# fancy_echo "Run download.sh ..."
+# source download.sh
 
 # TODO: split vscode download and setup into it's own script
 fancy_echo "Run casks.sh ..."
@@ -239,15 +230,18 @@ source vs_code.sh
 
 fancy_echo "Starting homebrew services ..."
 # brew services start redis
-brew services start postgresql
+brew services start postgresql@14
 
 # TODO: Move these sections to the the top of the script
 fancy_echo "Setup unique directories ..."
 mkdir -p ~/git
-mkdir -p ~/git/bhn
 mkdir -p ~/git/collectiveidea
 mkdir -p ~/git/guillermorangel
-mkdir -p ~/git/ngc
+
+# TODO: Add note about setting up iterm preferences and obsidian preferences before opening up apps
+# TODO: Move setup notes to notion along with purchase keys for:
+# TODO: TripMode, TablePlus, BetterDummy, etc
+# TODO: Run system setup commands automatically
 
 fancy_echo "Setup the following ..."
 fancy_echo "
@@ -257,72 +251,88 @@ $ defaults delete com.apple.dock persistent-apps; killall Dock
 Make TextEdit open with a new document instead of a file window:
 $ defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
-Preferences > Bluetooth
+Preferences:
+
+General
+- [ ] Allow wallpaper tinting in Windows
+
+Dock & Menu Bar
+- Decrease Dock size
+- [x] Automatically hide and show the Dock
+- [ ] Show recent applications applications
+- Battery:
+- - [x] Show Percentage
+- Clock:
+- - [x] Use a 24-hour clock
+- Spotlight:
+- - [ ] Disable Show in Menu Bar
+
+Security & Privacy
+- [x] Require password: {1 hour} after sleep or screen saver begins
+- [x] Use your Apple Watch to unlock apps and your Mac
+- Allow apps downloaded from: allow apps
+
+Bluetooth
 - Enable Show Bluetooth in menu bar
 
-Preferences > Displays
+Sound
+- [ ] Play sound on startup
+- [x] Show volume in menu bar: {always}
+
+Trackpad
+- [x] Tap to click
+- Tracking speed: 5th highest
+- [x] App Exposé
+
+Displays
 - Set Resolution > Scaled > More Space
-- Disable True Tone
-- Disable Automatically adjust brightness
 - Set Arrangement
+- [ ] True Tone
+- [ ] Automatically adjust brightness
 
-Preference > Dock & Menu Bar
-- Decrease Dock size
-- Enable Automatically hide and show the Dock
-- Disable Show recent applications applications
-- Battery > Enable Show Percentage
-- Clock > Enable Use a 24-hour clock
-- Spotlight > Disable Show in Menu Bar
+Sharing
+- Computer Name: guillermo's machine
 
-Preferences > General
-- Disable Allow wallpaper tinting in Windows
+Finder:
 
-Preferences > Sharing
-- Update Computer Name
+Menu > Finder > Preferences
+- General
+- - [x] Show these items on the desktop: External disks
+- - New finder window shows: {guillermo}
+- Sidebar
+- - [ ] iCloud
+- - [ ] Recent Tags
+- Advanced
+- - [x] Show all filename extensions
 
-Preferences > Security & Privacy
-- Set Require password: 1 hour
-- Enable Use your Apple Watch to unlock apps and your Mac
-
-Preferences > Sound
-- Disable Play sound on startup
-- Enable Show volume in menu bar: always
-
-Preferences > Trackpad
-- Enable Tap to click
-- Enable Silent clicking
-- Tracking speed: 4th highest
-- Enable App Exposé
-
-Desktop > Show View Options
-- Stack By: Kind
-- Sort By: Kind
+Menu > View > Show View Options
+- Stack By: {Kind}
+- Sort By: {Kind}
 - Icon Size: 48
 - Grid Spacing: 3rd highest
-- Text size: 10
-- Label position: Right
-- Show item info
+- Text size: {10}
+- Label position: {Right}
+- [x] Show item info
 
-Finder Preferences
-- General > Show these items on the desktop: External disks
-- General > New finder window shows: <user_home_directory>
-- Sidebar > Disable Recent Tags
-- Advanced > Show all filename extensions
-
-Finder > Show View Options
-- Enable Always open in column view & Browse in column view
-
-Finder > View
-- Show Path Bar
-- Show Status Bar
+New Finder Window, Menu > View:
+- Select: Show Path Bar
+- Select: Show Status Bar
+- > Show View Options
+- - [x] Always open in column view
+- - [x] Browse in column view
 
 Safari Preferences
-- Safari opens with: A new private window
-- Disable: Open safe files after downloading
-- Advanced > Enable: Show Develop menu in menu bar
+- General: 
+- - Safari opens with: {A new private window}
+- - [ ] Open safe files after downloading
+- Advanced:
+- - [ ] Show Develop menu in menu bar
 
 When ready, Enter to setup applications via open.sh ..."
 
+# TODO: Make it optional to start the macsetup process at differnt points
+# TODO: Be able to choose to open or not
+# TODO: make fancy echo and others globally available 
 fancy_echo "Run open.sh ..."
 source open.sh
 
