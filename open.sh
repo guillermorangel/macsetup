@@ -2,6 +2,9 @@
 
 # TODO: Make primary and secondary list of applications that should or should not be opened
 
+echo "Calendar"
+open /Applications/Calendar.app
+
 echo "Chrome"
 open /Applications/Google\ Chrome.app
 

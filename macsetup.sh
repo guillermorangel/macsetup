@@ -143,6 +143,9 @@ brew "yarn"
 # Databases
 brew "postgresql@14", restart_service: :changed
 brew "redis", restart_service: :changed
+
+# Dev Utils
+brew "ngrok"
 EOF
 
 fancy_echo "Update heroku binary ..."
