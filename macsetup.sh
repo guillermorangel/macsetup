@@ -146,6 +146,7 @@ brew "redis", restart_service: :changed
 
 # Dev Utils
 brew "ngrok"
+brew "flyctl"
 EOF
 
 fancy_echo "Update heroku binary ..."
